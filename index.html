@@ -9,28 +9,86 @@
 </head>
 
 <body>
-
+    <h1>Promises</h1>
+    <p>
+        1.To prevent from cb we uing this <br>
+        2.Promises chaining will takes place
+        3.Code Readability is looks better so it is used
+        4.If error occured it will moves into catch option
+        5.To improve this further they introduced async and await
+    </p>
 
     <script>
-        var promise = new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                resolve("success");
-            }, 3000)
-        })
+        // var promise = new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         resolve("success");
+        //     }, 3000)
+        // })
 
-        promise.then(function (data) {
-            console.log(data);
-        })
+        // promise.then(function (data) {
+        //     console.log(data);
+        // })
 
-        var a = new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                resolve("success")
-            }, 2000)
+        // var a = new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         resolve("success")
+        //     }, 2000)
+        // });
+
+        // a.then(function (ans) {
+        //     console.log(ans);
+        // })
+
+
+        // 
+        // let promise = new Promise((res, rej) => {
+        //     // res(100);
+        //     rej("some error");
+        // })
+
+        // promise
+        //     .then((value) => {
+        //         console.log('value is ' + value);
+        //     })
+        //     .catch ((err) => {
+        //     console.log('value is ' + err);
+        // });
+
+        // 
+        let promise = new Promise((res, rej) => {
+            res(0);
         });
 
-        a.then(function(ans){
-            console.log(ans);
-        })
+        promise
+            .then((data) => {
+                console.log(data);
+                return data + 1;
+            })
+            .then((data) => {
+                console.log(data);
+                return data + 1;
+            })
+            .then((data) => {
+                console.log(data);
+                return data + 1;
+            })
+            .then((data) => {
+                console.log(data);
+                return data + 1;
+            })
+            .then((data) => {
+                console.log(data);
+                return data + 1;
+            })
+            .then((data) => {
+                console.log(data);
+                return data + 1;
+            })
+            .catch((err) => {
+                console.log(err);
+
+            })
+
 
     </script>
 </body>
